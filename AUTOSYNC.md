@@ -116,7 +116,8 @@ Buka Terminal baru, lalu cukup ketik **`sync-sejarah`**.
 |---|---|
 | Skrip sync | `.autosync/sync.sh` |
 | Konfigurasi launchd | `~/Library/LaunchAgents/com.bakpia25.sejarah-autosync.plist` |
-| Log | `.autosync/sync.log` — diabaikan git, tidak ikut terunggah |
+| Log | `~/Library/Logs/sejarah-autosync.log` — di luar repo |
+| Kunci proses | `/tmp/.sejarah-autosync.lock` — di luar repo |
 
 Pemicunya dua lapis:
 
@@ -125,10 +126,13 @@ Pemicunya dua lapis:
 - **Tiap 10 menit** — `StartInterval` sebagai pengaman kalau ada perubahan yang
   terlewat pantauan.
 
-Skrip menunggu **6 detik** sebelum bekerja supaya perubahan beruntun menyatu jadi
-satu commit, dan memakai kunci direktori supaya tidak ada dua proses sync
-berbarengan. Berkas `.DS_Store` dibuang otomatis sebelum staging, dan log
-dipangkas sendiri kalau sudah lewat 500 baris.
+Alur skrip dibuat hemat: begitu jalan, ia langsung mengecek `git status`. Kalau
+tidak ada perubahan, ia **keluar seketika tanpa menulis apa pun** — inilah yang
+mencegah loop. Kalau ada perubahan, barulah ia menunggu **6 detik** supaya
+perubahan beruntun menyatu jadi satu commit, lalu commit dan push.
+
+Kunci proses memastikan tidak ada dua sync berbarengan. Berkas `.DS_Store`
+dibuang otomatis sebelum staging, dan log dipangkas sendiri kalau lewat 500 baris.
 
 Setelah push, GitHub Pages membangun ulang situs otomatis — biasanya selesai
 dalam **1–2 menit**.
@@ -155,4 +159,4 @@ gh auth status          # pastikan masih login sebagai Bakpia25Code
 git -C ~/Downloads/"SEJARAH TUGAS 1 KELAS XII" status
 ```
 
-Log kesalahan push ikut tercatat di `.autosync/sync.log`.
+Pesan kesalahan push ikut tercatat di `~/Library/Logs/sejarah-autosync.log`.
