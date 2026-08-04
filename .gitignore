@@ -1,4 +1,7 @@
 .DS_Store
 **/.DS_Store
+
+# Log autosync sekarang di ~/Library/Logs/sejarah-autosync.log (di luar repo),
+# baris di bawah hanya untuk membersihkan sisa berkas lama.
 .autosync/sync.log
 .autosync/.lock/
