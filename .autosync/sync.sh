@@ -29,7 +29,14 @@ sleep 6
 # Buang berkas sampah macOS sebelum staging.
 find . -name '.DS_Store' -not -path './.git/*' -delete 2>/dev/null
 
+# Jika folder tidak terbaca, penyebabnya hampir pasti Full Disk Access belum aktif.
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  log "GAGAL   : folder tidak terbaca — beri Full Disk Access ke /bin/zsh, lihat AUTOSYNC.md"
+  exit 1
+fi
+
 if [[ -z "$(git status --porcelain)" ]]; then
+  log "cek     : tidak ada perubahan"
   exit 0
 fi
 
