@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mempertahankan Kedaulatan Bangsa Dulu dan Kini — Perundingan RI dengan Pihak Asing tentang Kedaulatan Ekonomi</title>
+<style>
+/* ============================ RESET & TOKENS ============================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --bg:        #0a0f18;
+  --bg-2:      #0f1725;
+  --ink:       #f3efe6;
+  --ink-dim:   #9daabc;
+  --ink-faint: #64748b;
+  --gold:      #d9a441;
+  --gold-soft: #f0c674;
+  --red:       #d8455f;
+  --red-deep:  #b21e35;
+  --teal:      #4cc4c0;
+  --line:      rgba(243,239,230,.14);
+  --line-soft: rgba(243,239,230,.07);
+  --card:      rgba(255,255,255,.045);
+  --serif:     "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --sans:      -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono:      ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html, body { height: 100%; }
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================ STAGE / SCALING ============================ */
+#viewport{
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(1100px 700px at 78% -10%, rgba(217,164,65,.10), transparent 60%),
+    radial-gradient(900px 620px at 8% 108%, rgba(178,30,53,.14), transparent 62%),
+    var(--bg);
+}
+#stage{
+  position: relative;
+  width: 1280px; height: 720px;
+  transform-origin: center center;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 40px 120px rgba(0,0,0,.6);
+  background: var(--bg-2);
+}
+
+/* ============================ SLIDES ============================ */
+.slide{
+  position: absolute; inset: 0;
+  padding: 56px 68px 74px;
+  display: none;
+  flex-direction: column;
+  background: linear-gradient(160deg, #101a2b 0%, #0a0f18 62%);
+  animation: fade .38s ease both;
+}
+.slide.active{ display: flex; }
+@keyframes fade{ from{ opacity:0; transform: translateY(10px);} to{ opacity:1; transform:none;} }
+
+.eyebrow{
+  font-family: var(--mono);
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::after{ content:""; flex:1; height:1px; background: linear-gradient(90deg, rgba(217,164,65,.5), transparent); }
+
+h1{ font-family: var(--serif); font-size: 58px; line-height: 1.06; font-weight: 700; letter-spacing:-.015em; }
+h2{ font-family: var(--serif); font-size: 40px; line-height: 1.14; font-weight: 700; letter-spacing:-.01em; margin-bottom: 6px; }
+h3{ font-size: 19px; font-weight: 700; letter-spacing:-.005em; }
+p { font-size: 18px; line-height: 1.62; color: var(--ink-dim); }
+.sub{ font-size: 20px; color: var(--ink-dim); line-height:1.55; max-width: 60ch; }
+strong{ color: var(--ink); font-weight: 650; }
+em{ color: var(--gold-soft); font-style: normal; }
+
+.slide-body{ flex:1; min-height:0; display:flex; flex-direction:column; gap: 20px; }
+
+.chrome{
+  position:absolute; left:68px; right:68px; bottom:26px;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family: var(--mono); font-size: 11px; letter-spacing:.14em;
+  color: var(--ink-faint); text-transform: uppercase;
+  border-top: 1px solid var(--line-soft); padding-top: 12px;
+}
+.chrome .num{ color: var(--gold); }
+
+/* ============================ TITLE SLIDE ============================ */
+.title-slide{ padding:0; }
+.title-grid{ position:absolute; inset:0; display:grid; grid-template-columns: 1.15fr .85fr; }
+.title-left{ padding: 66px 54px 66px 68px; display:flex; flex-direction:column; justify-content:center; z-index:2; }
+.title-rule{ width:72px; height:4px; background: linear-gradient(90deg,var(--red),var(--gold)); margin: 26px 0 24px; border-radius:2px; }
+.title-right{ position:relative; overflow:hidden; }
+.title-right img{ width:100%; height:100%; object-fit:cover; filter: grayscale(.35) contrast(1.08) brightness(.72); }
+.title-right::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(90deg, #0a0f18 0%, rgba(10,15,24,.55) 38%, rgba(10,15,24,.1) 100%);
+}
+.meta-list{ margin-top: 30px; display:flex; flex-direction:column; gap:9px; font-size:12.5px; line-height:1.5; color:var(--ink-faint); font-family:var(--mono); letter-spacing:.02em; }
+.meta-list b{ color: var(--gold); font-weight:600; letter-spacing:.1em; text-transform:uppercase; display:block; margin-bottom:3px; font-size:10.5px; }
+
+/* ============================ DIVIDERS ============================ */
+.divider{ justify-content:center; align-items:flex-start; padding: 56px 78px; }
+.divider .big-num{
+  font-family: var(--serif); font-size: 150px; line-height:.86; font-weight:700;
+  background: linear-gradient(160deg, var(--gold-soft), var(--red-deep));
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+  margin-bottom: 14px;
+}
+.divider h2{ font-size: 52px; max-width: 20ch; }
+.divider .sub{ margin-top:14px; font-size: 19px; max-width: 55ch; }
+.divider-bg{ position:absolute; inset:0; z-index:0; }
+.divider-bg img{ width:100%; height:100%; object-fit:cover; filter: grayscale(.35) brightness(.62) contrast(1.06); }
+.divider-bg::after{ content:""; position:absolute; inset:0; background: linear-gradient(85deg, #080d15 8%, rgba(8,13,21,.82) 44%, rgba(8,13,21,.3) 100%); }
+.divider .slide-body{ position:relative; z-index:1; justify-content:center; }
+
+/* ============================ LAYOUT PRIMITIVES ============================ */
+.cols{ display:grid; gap: 22px; flex:1; min-height:0; }
+.c-2{ grid-template-columns: 1fr 1fr; }
+.c-2a{ grid-template-columns: 1.25fr .75fr; }
+.c-2b{ grid-template-columns: .8fr 1.2fr; }
+.c-3{ grid-template-columns: repeat(3,1fr); }
+.stack{ display:flex; flex-direction:column; gap:14px; min-height:0; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.card.accent{ border-color: rgba(217,164,65,.3); background: rgba(217,164,65,.07); }
+.card.danger{ border-color: rgba(216,69,95,.3); background: rgba(216,69,95,.07); }
+.card.good{ border-color: rgba(76,196,192,.28); background: rgba(76,196,192,.06); }
+.card h3{ margin-bottom: 7px; }
+.card p{ font-size: 15.5px; line-height:1.55; }
+.card.mid{ display:flex; flex-direction:column; justify-content:center; }
+
+ul.bullets{ list-style:none; display:flex; flex-direction:column; gap: 11px; }
+ul.bullets li{ position: relative; padding-left: 26px; font-size: 17px; line-height: 1.5; color: var(--ink-dim); }
+ul.bullets li::before{
+  content:""; position:absolute; left: 4px; top: 10px;
+  width: 7px; height: 7px; border-radius: 2px; background: var(--gold); transform: rotate(45deg);
+}
+ul.bullets.red li::before{ background: var(--red); }
+ul.bullets.teal li::before{ background: var(--teal); }
+ul.bullets li b{ color: var(--ink); }
+ul.bullets.tight li{ font-size: 15.5px; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:9px; }
+.chip{
+  font-family: var(--mono); font-size: 12px; letter-spacing:.08em;
+  padding: 7px 13px; border-radius: 100px;
+  border: 1px solid var(--line); color: var(--ink-dim); background: rgba(255,255,255,.03);
+}
+.chip b{ color: var(--gold); font-weight:600; }
+
+.stat-row{ display:grid; gap: 16px; }
+.stat{
+  border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 18px;
+  background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+}
+.stat .v{ font-family: var(--serif); font-size: 40px; font-weight:700; color: var(--gold-soft); line-height:1; }
+.stat .v small{ font-size: 19px; color: var(--ink-dim); font-family: var(--sans); font-weight:500; }
+.stat .k{ margin-top: 8px; font-size: 13.5px; color: var(--ink-dim); line-height:1.4; }
+
+table{ width:100%; border-collapse: collapse; font-size: 15.5px; }
+thead th{
+  text-align:left; font-family: var(--mono); font-size: 11.5px; letter-spacing:.16em;
+  text-transform: uppercase; color: var(--gold); font-weight:600;
+  padding: 11px 14px; border-bottom: 1px solid var(--line);
+}
+tbody td{ padding: 13px 14px; vertical-align: top; color: var(--ink-dim); line-height:1.5; border-bottom: 1px solid var(--line-soft); }
+tbody tr:last-child td{ border-bottom: none; }
+tbody td:first-child{ color: var(--ink); font-weight:600; white-space: nowrap; }
+tbody tr:nth-child(odd){ background: rgba(255,255,255,.022); }
+.tbl-wrap{ border:1px solid var(--line-soft); border-radius:12px; overflow:hidden; background: var(--card); }
+
+.fig{ position:relative; border-radius:12px; overflow:hidden; background:#060a11; border:1px solid var(--line-soft); min-height:0; display:flex; flex-direction:column; }
+.fig img{ width:100%; height:100%; object-fit: cover; display:block; flex:1; min-height:0; }
+.fig.contain img{ object-fit: contain; background:#f7f7f4; padding: 4px; }
+.fig figcaption{
+  padding: 9px 13px; font-size: 12px; line-height:1.4; color: var(--ink-faint);
+  background: rgba(0,0,0,.42); border-top:1px solid var(--line-soft);
+  font-family: var(--mono); letter-spacing:.02em;
+}
+
+.portrait{ display:flex; flex-direction:column; border:1px solid var(--line-soft); border-radius:12px; overflow:hidden; background: var(--card); }
+.portrait .ph{ height: 210px; overflow:hidden; background:#0b1220; }
+.portrait .ph img{ width:100%; height:100%; object-fit:cover; object-position: center 22%; filter: grayscale(.25) contrast(1.05); }
+.portrait .pb{ padding: 14px 16px 16px; }
+.portrait .pn{ font-family: var(--serif); font-size: 21px; font-weight:700; color: var(--ink); }
+.portrait .pr{ font-family: var(--mono); font-size: 11px; letter-spacing:.14em; text-transform:uppercase; color: var(--gold); margin: 5px 0 8px; }
+.portrait .pd{ font-size: 14px; line-height:1.5; color: var(--ink-dim); }
+
+.videobox{ display:flex; flex-direction:column; border:1px solid var(--line-soft); border-radius:12px; overflow:hidden; background:#05080e; min-height:0; }
+.videobox video{ width:100%; flex:1; min-height:0; background:#05080e; display:block; object-fit: contain; }
+.videobox .vcap{ padding: 10px 14px; font-size:12px; color: var(--ink-faint); font-family:var(--mono); background: rgba(0,0,0,.4); border-top:1px solid var(--line-soft); line-height:1.45; }
+.videobox .vcap b{ color: var(--gold-soft); font-weight:600; }
+
+/* timeline */
+.timeline{ position:relative; display:grid; grid-template-columns: repeat(5,1fr); flex:0 0 auto; align-content:center; padding-top: 14px; }
+.tl-item{ position:relative; padding: 0 12px; text-align:center; }
+.tl-year{ font-family: var(--serif); font-size: 31px; font-weight:700; color:var(--ink); margin-bottom: 12px; line-height:1; }
+.tl-rail{ position:relative; height: 20px; display:flex; align-items:center; justify-content:center; }
+.tl-rail::before{ content:""; position:absolute; left:-60%; right:-60%; top:50%; height:2px; margin-top:-1px; background: rgba(217,164,65,.4); }
+.tl-item:first-child .tl-rail::before{ left:50%; }
+.tl-item:last-child  .tl-rail::before{ right:50%; }
+.tl-dot{ position:relative; z-index:1; width: 15px; height:15px; border-radius:50%; background: var(--gold); border: 3px solid #0d1525; box-shadow: 0 0 0 4px rgba(217,164,65,.16); }
+.tl-t{ margin-top: 16px; font-size: 15px; font-weight:650; color: var(--ink); line-height:1.35; }
+.tl-d{ margin-top: 7px; font-size: 13px; color: var(--ink-faint); line-height:1.45; }
+
+.quote{ border-left: 3px solid var(--gold); padding: 4px 0 4px 22px; font-family: var(--serif); font-size: 24px; line-height:1.45; color: var(--ink); }
+.quote .src{ display:block; margin-top: 12px; font-family: var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+
+/* team roster */
+.roster{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px 22px; }
+.member{
+  display:flex; align-items:center; gap: 16px;
+  border:1px solid var(--line-soft); border-radius: 12px;
+  background: var(--card); padding: 13px 18px;
+}
+.member .no{
+  flex:0 0 auto; width:34px; height:34px; border-radius:50%;
+  display:grid; place-items:center;
+  font-family: var(--mono); font-size:13px; font-weight:600; color:#0a0f18;
+  background: linear-gradient(150deg, var(--gold-soft), var(--gold));
+}
+.member .nm{ flex:1; font-size: 16px; font-weight:600; color: var(--ink); line-height:1.3; }
+.member .ab{ font-family: var(--mono); font-size:11px; letter-spacing:.12em; color: var(--ink-faint); text-transform:uppercase; }
+.member .ab b{ color: var(--gold-soft); font-size:15px; letter-spacing:0; }
+
+/* source list */
+.srcs{ display:flex; flex-direction:column; gap: 11px; }
+.srcs div{ padding-left: 18px; position:relative; font-size: 14px; color: var(--ink-dim); line-height:1.5; }
+.srcs div::before{ content:"▸"; position:absolute; left:0; color: var(--gold); }
+.srcs b{ color: var(--ink); font-weight:650; }
+.srcs i{ color: var(--ink-dim); }
+.srcs .u{ display:block; font-family: var(--mono); font-size:11.5px; color: var(--ink-faint); margin-top:3px; word-break: break-all; }
+
+/* ============================ UI ============================ */
+#progress{ position: fixed; left:0; top:0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--red), var(--gold)); z-index: 50; transition: width .3s ease; }
+#hud{ position: fixed; right: 18px; bottom: 16px; z-index: 50; display:flex; align-items:center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+#hud button{
+  background: rgba(255,255,255,.06); border:1px solid var(--line-soft); color: var(--ink-dim);
+  width: 34px; height: 30px; border-radius: 8px; cursor: pointer; font-size: 14px;
+  display:grid; place-items:center; transition: .15s;
+}
+#hud button:hover{ background: rgba(217,164,65,.16); color: var(--gold-soft); border-color: rgba(217,164,65,.35); }
+#counter{ padding: 0 8px; letter-spacing:.1em; }
+
+#notes{
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: rgba(6,10,17,.97); border-top: 1px solid var(--line);
+  padding: 18px 26px 22px; max-height: 34vh; overflow:auto;
+  transform: translateY(101%); transition: transform .28s ease; backdrop-filter: blur(10px);
+}
+#notes.open{ transform: none; }
+#notes .nh{ font-family: var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color: var(--gold); margin-bottom:10px; }
+#notes .nb{ font-size: 15.5px; line-height:1.65; color: var(--ink-dim); max-width: 100ch; }
+#notes .nb li{ margin-left: 18px; margin-bottom: 5px; }
+
+#help{ position: fixed; inset:0; z-index: 70; display:none; background: rgba(5,8,14,.9); backdrop-filter: blur(8px); place-items:center; }
+#help.open{ display:grid; }
+#help .box{ background: var(--bg-2); border:1px solid var(--line); border-radius:16px; padding: 34px 40px; max-width: 520px; }
+#help h3{ font-family:var(--serif); font-size:26px; margin-bottom:18px; }
+#help dl{ display:grid; grid-template-columns: auto 1fr; gap: 11px 20px; font-size:15px; align-items:baseline; }
+#help dt{ font-family:var(--mono); font-size:12px; color: var(--gold); }
+#help dd{ color: var(--ink-dim); }
+#help .close{ margin-top: 22px; font-size:13px; color: var(--ink-faint); font-family:var(--mono); }
+
+#overview{ position: fixed; inset:0; z-index: 65; display:none; background: rgba(5,8,14,.97); overflow:auto; padding: 30px; }
+#overview.open{ display:block; }
+#ovGrid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr)); gap: 14px; }
+.ov-card{ border:1px solid var(--line-soft); border-radius:10px; padding: 14px; cursor:pointer; background: rgba(255,255,255,.035); transition:.15s; min-height: 96px; }
+.ov-card:hover{ background: rgba(217,164,65,.13); border-color: rgba(217,164,65,.4); }
+.ov-card.cur{ border-color: var(--gold); background: rgba(217,164,65,.16); }
+.ov-card .n{ font-family:var(--mono); font-size:11px; color: var(--gold); letter-spacing:.12em; }
+.ov-card .t{ margin-top:7px; font-size:14px; color: var(--ink); line-height:1.35; font-weight:600; }
+
+@media print{ #hud,#progress,#notes,#help,#overview{ display:none !important; } }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<div id="viewport">
+<div id="stage">
+
+<!-- ══════════════════════ 1 · JUDUL ══════════════════════ -->
+<section class="slide title-slide" data-title="Judul" data-notes="
+<li>Buka dengan pertanyaan pemantik: <b>&ldquo;Apakah kemerdekaan cukup diperjuangkan dengan senjata?&rdquo;</b></li>
+<li>Sampaikan bahwa presentasi ini membandingkan dua zaman: perundingan 1945&ndash;1949 dan tantangan kedaulatan ekonomi hari ini.</li>
+<li>Tekankan benang merahnya: <b>diplomasi</b> sebagai senjata utama Indonesia.</li>">
+  <div class="title-grid">
+    <div class="title-left">
+      <div class="eyebrow">Sejarah &middot; Kelas XII &middot; Tugas 1</div>
+      <h1>Mempertahankan<br>Kedaulatan Bangsa<br>Dulu dan Kini</h1>
+      <div class="title-rule"></div>
+      <p class="sub">Perundingan RI dengan Pihak Asing tentang <em>Kedaulatan Ekonomi</em> — dari meja runding Linggarjati hingga ketahanan energi di Selat Hormuz.</p>
+      <div class="meta-list">
+        <div><b>Kasus Sejarah</b>Linggarjati 1946 · Renville 1948 · Roem&ndash;Royen 1949 · KMB</div>
+        <div><b>Kasus Masa Kini</b>Konflik Selat Hormuz &amp; ketahanan energi nasional</div>
+      </div>
+    </div>
+    <div class="title-right">
+      <img src="assets/img/renville-nego.jpg" alt="Perundingan Renville di atas kapal USS Renville, 1948">
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Mempertahankan Kedaulatan Bangsa</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 2 · ANGGOTA KELOMPOK ══════════════════════ -->
+<section class="slide" data-title="Anggota Kelompok" data-notes="
+<li>Perkenalkan anggota kelompok secara singkat — cukup sebut nama, jangan bacakan semua nomor presensi satu per satu.</li>
+<li>Sebutkan siapa yang membawakan bagian mana kalau pembagiannya sudah ditentukan.</li>">
+  <div class="eyebrow">Kelompok Penyaji</div>
+  <h2>Anggota kelompok</h2>
+  <div class="slide-body">
+    <div class="cols c-2b">
+      <figure class="fig">
+        <img src="assets/img/gedung-proklamasi.jpg" alt="Gedung Proklamasi, Jalan Pegangsaan Timur 56 Jakarta">
+        <figcaption>Gedung Proklamasi, Pegangsaan Timur 56, Jakarta — tempat kedaulatan Indonesia dinyatakan.</figcaption>
+      </figure>
+      <div class="stack" style="justify-content:center">
+        <div class="roster">
+          <div class="member"><span class="no">1</span><span class="nm">Arlen Putra Sanjaya</span><span class="ab">No.<br><b>5</b></span></div>
+          <div class="member"><span class="no">2</span><span class="nm">Benedictus Panjir Satrio</span><span class="ab">No.<br><b>7</b></span></div>
+          <div class="member"><span class="no">3</span><span class="nm">Bradley Natan Kenaz Dolontelide</span><span class="ab">No.<br><b>9</b></span></div>
+          <div class="member"><span class="no">4</span><span class="nm">Cyrillus Ryu Priambodo</span><span class="ab">No.<br><b>13</b></span></div>
+          <div class="member"><span class="no">5</span><span class="nm">Devdan Maraville Bayu Aji</span><span class="ab">No.<br><b>15</b></span></div>
+          <div class="member"><span class="no">6</span><span class="nm">Gilbert Frederick Sihombing</span><span class="ab">No.<br><b>19</b></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Anggota Kelompok</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 3 · PETA JALAN ══════════════════════ -->
+<section class="slide" data-title="Peta Jalan" data-notes="
+<li>Jelaskan alur presentasi supaya audiens tahu ke mana arah pembahasan.</li>
+<li>Urutannya sengaja dibalik: <b>mulai dari masa kini</b> agar relevan, baru mundur ke sejarah, lalu disintesiskan.</li>">
+  <div class="eyebrow">Peta Jalan</div>
+  <h2>Tiga langkah pembahasan</h2>
+  <div class="slide-body">
+    <div class="cols c-3">
+      <div class="stack">
+        <div class="card accent" style="flex:0 0 auto">
+          <div class="eyebrow" style="margin-bottom:8px">Bagian I</div>
+          <h3>Kasus Masa Kini</h3>
+          <p>Ketegangan di Selat Hormuz dan dampaknya terhadap kedaulatan ekonomi serta ketahanan energi Indonesia.</p>
+        </div>
+        <figure class="fig contain" style="flex:1;min-height:0"><img src="assets/img/timteng-migas.jpg" alt="Peta minyak dan gas Timur Tengah"></figure>
+      </div>
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <div class="eyebrow" style="margin-bottom:8px;color:var(--red)">Bagian II</div>
+          <h3>Kasus Sejarah 1945–1949</h3>
+          <p>Tiga perundingan besar RI dengan Belanda beserta tokoh, strategi, dan dampaknya bagi opini internasional.</p>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0"><img src="assets/img/linggarjati-killearn.jpg" alt="Lord Killearn bersama Soekarno pada masa perundingan Linggarjati"></figure>
+      </div>
+      <div class="stack">
+        <div class="card good" style="flex:0 0 auto">
+          <div class="eyebrow" style="margin-bottom:8px;color:var(--teal)">Bagian III</div>
+          <h3>Sintesis Perbandingan</h3>
+          <p>Persamaan dan perbedaan pola kedua zaman, serta nilai perjuangan yang masih relevan hari ini.</p>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0"><img src="assets/img/kedaulatan-istana.jpg" alt="Upacara penyerahan kedaulatan di Istana Dam, Amsterdam"></figure>
+      </div>
+    </div>
+    <div class="quote" style="flex:0 0 auto">Bangsa yang lemah senjatanya harus kuat argumennya — <em>diplomasi adalah medan perang yang lain.</em></div>
+  </div>
+  <div class="chrome"><span class="tag">Peta Jalan</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 4 · DIVIDER I ══════════════════════ -->
+<section class="slide divider" data-title="Bagian I — Kasus Masa Kini" data-notes="
+<li>Slide pembatas. Beri jeda sejenak, lalu perkenalkan kasus Selat Hormuz.</li>
+<li>Pancing audiens: <b>&ldquo;Kenapa konflik yang jaraknya ribuan kilometer bisa menaikkan harga BBM di Indonesia?&rdquo;</b></li>">
+  <div class="divider-bg"><img src="assets/img/hormuz-satelit.jpg" alt="Citra satelit Selat Hormuz"></div>
+  <div class="slide-body">
+    <div class="big-num">I</div>
+    <div class="eyebrow">Bagian Pertama</div>
+    <h2>Kasus Masa Kini</h2>
+    <p class="sub">Ketegangan di Selat Hormuz dan ujian bagi kedaulatan ekonomi Indonesia — ketika ancaman datang bukan dari meriam, melainkan dari terputusnya jalur perdagangan dunia.</p>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Kasus Masa Kini</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 5 · KONTEKS HORMUZ ══════════════════════ -->
+<section class="slide" data-title="Selat Hormuz: Titik Cekik Dunia" data-notes="
+<li>Tunjukkan peta: Selat Hormuz adalah satu-satunya pintu laut keluar minyak dari Teluk Persia.</li>
+<li>Angka kunci: <b>±20 juta barel per hari</b> (data EIA 2024), setara <b>±20% konsumsi minyak dunia</b>; titik tersempit hanya <b>±33 km</b>.</li>
+<li>Tunjukkan grafik kanan bawah: sejak sekitar <b>2003</b> Indonesia berbalik dari pengekspor menjadi <b>pengimpor neto</b> minyak — garis konsumsi melewati produksi.</li>
+<li>Inilah alasan konflik di Teluk langsung terasa di dalam negeri.</li>">
+  <div class="eyebrow">Konteks — Bagian I</div>
+  <h2>Selat Hormuz: titik cekik energi dunia</h2>
+  <div class="slide-body">
+    <div class="cols c-2b">
+      <div class="stack">
+        <div class="stat-row" style="grid-template-columns:1fr">
+          <div class="stat">
+            <div class="v">±20 <small>juta barel/hari</small></div>
+            <div class="k">Volume minyak yang melintasi Selat Hormuz pada 2024 — jalur minyak laut tersibuk di dunia.</div>
+          </div>
+        </div>
+        <div class="stat-row" style="grid-template-columns:1fr 1fr">
+          <div class="stat">
+            <div class="v">±20<small>%</small></div>
+            <div class="k">Bagian dari total konsumsi minyak dunia.</div>
+          </div>
+          <div class="stat">
+            <div class="v">±33 <small>km</small></div>
+            <div class="k">Lebar titik tersempit selat.</div>
+          </div>
+        </div>
+        <div class="card danger" style="flex:1;display:flex;flex-direction:column;justify-content:center">
+          <h3>Mengapa ini menyangkut Indonesia?</h3>
+          <p>Indonesia sudah menjadi <strong>importir neto minyak</strong>. Harga minyak dunia yang naik langsung menaikkan biaya impor BBM dan membebani anggaran negara — meskipun Indonesia sama sekali bukan pihak yang berkonflik.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <figure class="fig contain" style="flex:0.85">
+          <img src="assets/img/hormuz-peta.png" alt="Peta Selat Hormuz">
+          <figcaption>Peta Selat Hormuz — jalur keluar minyak dari Teluk Persia menuju pasar dunia.</figcaption>
+        </figure>
+        <figure class="fig contain" style="flex:1.35">
+          <img src="assets/img/neraca-minyak.png" alt="Grafik neraca minyak Indonesia: produksi, konsumsi, ekspor dan impor neto">
+          <figcaption>Neraca minyak Indonesia: sejak ±2003 impor neto (merah) terus melebar — konsumsi melampaui produksi.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Konteks</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 6 · ANCAMAN ══════════════════════ -->
+<section class="slide" data-title="Ancaman terhadap Kedaulatan" data-notes="
+<li>Ini jawaban pertanyaan nomor 1 pada tugas: <b>apa ancamannya?</b></li>
+<li>Urutkan sebagai rantai sebab-akibat: distribusi terganggu → harga naik → biaya impor naik → ketahanan energi &amp; stabilitas ekonomi terancam → inflasi.</li>
+<li>Tegaskan: ancaman terhadap kedaulatan kini bersifat <b>ekonomi</b>, bukan militer.</li>">
+  <div class="eyebrow">Pertanyaan 1 — Bagian I</div>
+  <h2>Ancaman terhadap kedaulatan</h2>
+  <div class="slide-body">
+    <div class="cols c-2a">
+      <div class="stack">
+        <div class="card danger">
+          <h3>1 &nbsp;Jalur distribusi minyak dunia terganggu</h3>
+          <p>Konflik di Selat Hormuz mengancam kelancaran pelayaran tanker minyak yang menjadi urat nadi pasokan energi global.</p>
+        </div>
+        <div class="card danger">
+          <h3>2 &nbsp;Harga minyak dunia melonjak</h3>
+          <p>Kenaikan harga meningkatkan biaya impor BBM Indonesia sekaligus menekan anggaran negara.</p>
+        </div>
+        <div class="card danger">
+          <h3>3 &nbsp;Ketahanan energi &amp; stabilitas ekonomi nasional terancam</h3>
+          <p>Pasokan yang tidak pasti mengganggu produksi, transportasi, dan aktivitas ekonomi dalam negeri.</p>
+        </div>
+        <div class="card danger">
+          <h3>4 &nbsp;Potensi inflasi</h3>
+          <p>Kenaikan harga BBM merambat ke harga barang dan jasa — daya beli masyarakat menurun.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <figure class="fig">
+          <img src="assets/img/spbu.jpg" alt="SPBU Pertamina di Indonesia">
+          <figcaption>SPBU Pertamina — titik akhir rantai pasok yang paling langsung dirasakan masyarakat.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="assets/img/jakarta.jpg" alt="Lalu lintas Jakarta">
+          <figcaption>Transportasi, industri, dan distribusi pangan semuanya bergantung pada BBM.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Ancaman</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 7 · AKTOR ══════════════════════ -->
+<section class="slide" data-title="Aktor yang Terlibat" data-notes="
+<li>Bagi aktor menjadi tiga lingkaran: <b>pihak berkonflik</b>, <b>pihak terdampak</b>, dan <b>pihak penengah</b>.</li>
+<li>Tekankan posisi Indonesia: berada di lingkaran <b>terdampak</b>, bukan pelaku konflik — ini yang menentukan pilihan strateginya nanti.</li>">
+  <div class="eyebrow">Pertanyaan 1 — Bagian I</div>
+  <h2>Aktor yang terlibat</h2>
+  <div class="slide-body">
+    <div class="cols c-3">
+      <div class="stack">
+        <div class="card danger" style="flex:0 0 auto">
+          <div class="eyebrow" style="color:var(--red);margin-bottom:10px">Pihak Berkonflik</div>
+          <ul class="bullets red tight">
+            <li><b>Iran</b> — negara yang menguasai sisi utara selat.</li>
+            <li><b>Amerika Serikat</b> dan negara-negara Barat yang terlibat dalam konflik kawasan.</li>
+          </ul>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/tanker-pertamina.jpg" alt="Kapal tanker Pertamina" style="object-position:center 62%">
+          <figcaption>Konflik di selat langsung mengguncang lalu lintas tanker dunia.</figcaption>
+        </figure>
+      </div>
+      <div class="stack">
+        <div class="card accent" style="flex:0 0 auto">
+          <div class="eyebrow" style="margin-bottom:10px">Pihak Terdampak</div>
+          <ul class="bullets tight">
+            <li><b>Negara-negara Teluk</b> sebagai pengekspor minyak.</li>
+            <li><b>Pemerintah Indonesia</b> — Kementerian Luar Negeri, Kementerian ESDM, dan Pertamina.</li>
+            <li>Seluruh <b>negara pengguna jalur</b> Selat Hormuz.</li>
+          </ul>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/pertamina-kantor.jpg" alt="Kantor pusat Pertamina" style="object-position:center 70%">
+          <figcaption>Pertamina — pelaksana kebijakan energi nasional.</figcaption>
+        </figure>
+      </div>
+      <div class="stack">
+        <div class="card good" style="flex:0 0 auto">
+          <div class="eyebrow" style="color:var(--teal);margin-bottom:10px">Pihak Penengah</div>
+          <ul class="bullets teal tight">
+            <li><b>Organisasi internasional</b> yang berupaya menjaga keamanan jalur pelayaran dan mendorong penyelesaian damai.</li>
+          </ul>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/elpiji.jpg" alt="Tabung elpiji 3 kg untuk rumah tangga">
+          <figcaption>Ujungnya sampai ke dapur rumah tangga — energi adalah urusan setiap warga.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Aktor</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 8 · STRATEGI ══════════════════════ -->
+<section class="slide" data-title="Strategi Pemerintah & Masyarakat" data-notes="
+<li>Jawaban pertanyaan nomor 2: <b>diplomasi, perlawanan langsung, atau keduanya?</b></li>
+<li>Sampaikan kesimpulan tegas di kotak kanan bawah: <b>diplomasi</b>, karena Indonesia bukan pihak yang berkonflik.</li>
+<li>Kaitkan dengan prinsip <b>politik luar negeri bebas aktif</b> — bebas menentukan sikap, aktif menjaga perdamaian.</li>">
+  <div class="eyebrow">Pertanyaan 2 — Bagian I</div>
+  <h2>Strategi yang dapat ditempuh</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <div class="eyebrow" style="margin-bottom:12px">Pemerintah</div>
+          <ul class="bullets">
+            <li>Mengutamakan <b>diplomasi</b> dengan tetap bersikap <b>netral</b>.</li>
+            <li>Menjalin <b>kerja sama internasional</b> untuk menjaga keamanan jalur pelayaran.</li>
+            <li><b>Diversifikasi</b> sumber impor minyak.</li>
+            <li>Memperkuat <b>cadangan energi nasional</b>.</li>
+            <li>Mempercepat <b>transisi menuju energi terbarukan</b>.</li>
+          </ul>
+        </div>
+        <figure class="fig contain" style="flex:1;min-height:0">
+          <img src="assets/img/energi-surya.png" alt="Peta potensi tenaga surya Indonesia">
+          <figcaption>Potensi tenaga surya Indonesia — modal utama transisi energi agar tidak bergantung pada impor.</figcaption>
+        </figure>
+      </div>
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <div class="eyebrow" style="color:var(--teal);margin-bottom:12px">Masyarakat</div>
+          <ul class="bullets teal">
+            <li><b>Menghemat</b> penggunaan energi.</li>
+            <li><b>Mendukung kebijakan pemerintah</b> dalam menjaga ketahanan energi.</li>
+          </ul>
+        </div>
+        <div class="card accent mid" style="flex:1">
+          <h3 style="color:var(--gold-soft);font-size:17px;margin-bottom:8px">Kesimpulan strategi</h3>
+          <p style="font-size:17px;color:var(--ink)">Strategi yang paling tepat adalah <strong>diplomasi</strong>, bukan perlawanan langsung — karena <strong>Indonesia bukan pihak yang berkonflik</strong>. Keterlibatan militer justru merugikan tanpa memberi keuntungan apa pun.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Strategi</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 9 · RISIKO & PELUANG ══════════════════════ -->
+<section class="slide" data-title="Risiko & Peluang" data-notes="
+<li>Jawaban pertanyaan nomor 3. Bacakan tabel dengan tekanan pada baris <b>Perlawanan langsung</b>.</li>
+<li>Poin kunci: peluang perlawanan langsung <b>hampir nol</b>, sementara risikonya sangat besar — maka pilihan rasionalnya jelas.</li>
+<li>Diplomasi memang tidak bisa menghentikan konflik secara langsung, tetapi <b>melindungi kepentingan nasional</b>.</li>">
+  <div class="eyebrow">Pertanyaan 3 — Bagian I</div>
+  <h2>Risiko dan peluang tiap strategi</h2>
+  <div class="slide-body">
+    <div class="tbl-wrap" style="flex:0 0 auto">
+      <table>
+        <thead><tr><th style="width:20%">Strategi</th><th style="width:40%">Risiko</th><th style="width:40%">Peluang</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--gold-soft)">Diplomasi</td>
+            <td>Hasil bergantung pada kerja sama negara lain dan tidak dapat menghentikan konflik secara langsung.</td>
+            <td>Hubungan internasional tetap baik, pasokan energi lebih terjamin, dan Indonesia terhindar dari konflik.</td>
+          </tr>
+          <tr>
+            <td style="color:var(--red)">Perlawanan langsung</td>
+            <td>Berpotensi menyeret Indonesia ke dalam konflik militer dan mengganggu stabilitas nasional.</td>
+            <td>Hampir tidak ada keuntungan karena Indonesia bukan pihak yang bersengketa.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols c-2" style="flex:1;min-height:0">
+      <div class="card good mid">
+        <h3 style="color:var(--teal)">Pilihan yang rasional</h3>
+        <p>Diplomasi memberi <strong>rasio manfaat terhadap risiko</strong> yang jauh lebih baik. Indonesia menjaga kepentingan ekonominya tanpa mengorbankan keamanan nasional — dan tetap bisa berbicara dengan semua pihak yang bertikai.</p>
+      </div>
+      <figure class="fig">
+        <img src="assets/img/tanker.jpg" alt="Kapal supertanker pengangkut minyak mentah">
+        <figcaption>Yang dipertaruhkan bukan wilayah, melainkan kelancaran kapal-kapal seperti ini.</figcaption>
+      </figure>
+    </div>
+    <div class="quote" style="flex:0 0 auto;font-size:22px">Bersikap netral bukan berarti tidak berpihak — <em>Indonesia berpihak pada kepentingan bangsanya sendiri.</em></div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian I · Risiko &amp; Peluang</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 10 · DIVIDER II ══════════════════════ -->
+<section class="slide divider" data-title="Bagian II — Kasus Sejarah 1945–1949" data-notes="
+<li>Transisi: <b>&ldquo;Pola seperti ini bukan hal baru bagi Indonesia.&rdquo;</b></li>
+<li>Bawa audiens mundur ke 1945 — saat Indonesia baru merdeka dan harus mempertahankan kedaulatan dengan kekuatan militer yang jauh lebih kecil.</li>">
+  <div class="divider-bg"><img src="assets/img/proklamasi.jpg" alt="Proklamasi Kemerdekaan Indonesia 17 Agustus 1945"></div>
+  <div class="slide-body">
+    <div class="big-num">II</div>
+    <div class="eyebrow">Bagian Kedua</div>
+    <h2>Kasus Sejarah<br>1945 &ndash; 1949</h2>
+    <p class="sub">Setelah Proklamasi, Belanda berusaha kembali menguasai Indonesia. Dengan kekuatan militer yang terbatas, Republik memilih jalan perundingan.</p>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Kasus Sejarah</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 11 · KRONOLOGI ══════════════════════ -->
+<section class="slide" data-title="Kronologi 1945–1949" data-notes="
+<li>Gunakan slide ini sebagai peta besar sebelum masuk ke tiap perundingan — jangan diuraikan panjang, detailnya ada di slide berikutnya.</li>
+<li>Tunjukkan polanya: <b>perundingan → dilanggar Belanda → agresi militer → perundingan lagi</b>.</li>
+<li>Setiap kali Belanda melanggar, <b>simpati internasional justru berpindah ke Indonesia</b> — inilah kemenangan diplomasi.</li>">
+  <div class="eyebrow">Kronologi — Bagian II</div>
+  <h2>Empat tahun perjuangan di meja runding</h2>
+  <div class="slide-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1945</div>
+        <div class="tl-rail"><span class="tl-dot"></span></div>
+        <div class="tl-t">Proklamasi Kemerdekaan</div>
+        <div class="tl-d">Belanda berusaha kembali menguasai Indonesia. Kekuatan militer RI masih terbatas.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1946</div>
+        <div class="tl-rail"><span class="tl-dot"></span></div>
+        <div class="tl-t">Perjanjian Linggarjati</div>
+        <div class="tl-d">Belanda mengakui RI secara <b>de facto</b> atas Jawa, Madura, dan Sumatra.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1947</div>
+        <div class="tl-rail"><span class="tl-dot" style="background:var(--red);box-shadow:0 0 0 4px rgba(216,69,95,.18)"></span></div>
+        <div class="tl-t">Agresi Militer Belanda I</div>
+        <div class="tl-d">Kesepakatan dilanggar; persoalan RI dibawa ke Dewan Keamanan PBB.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1948</div>
+        <div class="tl-rail"><span class="tl-dot"></span></div>
+        <div class="tl-t">Perjanjian Renville</div>
+        <div class="tl-d">RI menerima <b>Garis Van Mook</b>; wilayah kekuasaan RI menyempit.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1949</div>
+        <div class="tl-rail"><span class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 4px rgba(76,196,192,.18)"></span></div>
+        <div class="tl-t">Roem&ndash;Royen &rarr; KMB</div>
+        <div class="tl-d">Yogyakarta dikembalikan; jalan menuju KMB terbuka. <b>27 Des 1949</b> kedaulatan diakui.</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;flex:1;min-height:0">
+      <figure class="fig"><img src="assets/img/proklamasi-bendera.jpg" alt="Pengibaran Sang Saka Merah Putih 17 Agustus 1945"></figure>
+      <figure class="fig"><img src="assets/img/linggarjati-delegasi.jpg" alt="Peserta konferensi Linggarjati bersama Soekarno"></figure>
+      <figure class="fig"><img src="assets/img/agresi-1.jpg" alt="Dokumentasi Agresi Militer Belanda I di Ambarawa"></figure>
+      <figure class="fig"><img src="assets/img/renville-truce.jpg" alt="Penandatanganan gencatan senjata Renville"></figure>
+      <figure class="fig"><img src="assets/img/kmb-slotzitting.jpg" alt="Sidang penutup Konferensi Meja Bundar di Ridderzaal"></figure>
+    </div>
+    <div class="card accent" style="flex:0 0 auto">
+      <p style="font-size:16.5px;color:var(--ink)">Polanya berulang: <strong>berunding &rarr; dilanggar &rarr; agresi militer &rarr; tekanan internasional &rarr; berunding lagi.</strong> Setiap pelanggaran Belanda justru memperkuat posisi diplomatik Indonesia di mata dunia.</p>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Kronologi</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 12 · LINGGARJATI ══════════════════════ -->
+<section class="slide" data-title="Perjanjian Linggarjati (1946)" data-notes="
+<li><b>Latar belakang:</b> setelah Proklamasi 1945, Belanda berusaha kembali menguasai Indonesia. Indonesia memilih berunding karena kekuatan militernya masih terbatas.</li>
+<li><b>Hasil:</b> Belanda mengakui RI secara <i>de facto</i> atas Jawa, Madura, dan Sumatra.</li>
+<li>Ini adalah <b>pengakuan pertama</b> atas eksistensi Republik — modal politik yang sangat berharga.</li>
+<li>Perundingan berlangsung di Desa Linggarjati, Kuningan, Jawa Barat.</li>
+<li>Putar videonya sebentar (±30 detik) lalu lanjut — jangan diputar penuh.</li>">
+  <div class="eyebrow">Perundingan Pertama — 1946</div>
+  <h2>Perjanjian Linggarjati</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <h3 style="color:var(--gold-soft)">Latar belakang &amp; kronologi</h3>
+          <ul class="bullets" style="margin-top:10px">
+            <li>Setelah <b>Proklamasi 1945</b>, Belanda berusaha kembali menguasai Indonesia.</li>
+            <li>Indonesia memilih <b>berunding</b> karena kekuatan militernya masih terbatas.</li>
+            <li>Hasilnya, Belanda mengakui RI secara <b>de facto</b> atas <b>Jawa, Madura, dan Sumatra</b>.</li>
+          </ul>
+        </div>
+        <div class="cols c-2" style="flex:1;min-height:0">
+          <figure class="fig">
+            <img src="assets/img/gedung-linggarjati.jpg" alt="Gedung Perundingan Linggarjati di Kuningan">
+            <figcaption>Gedung Perundingan Linggarjati, Kuningan, Jawa Barat.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="assets/img/linggarjati-sign.jpg" alt="Suasana perundingan Linggarjati 1946">
+            <figcaption>Suasana perundingan di meja Linggarjati, 1946.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="videobox">
+        <video src="assets/video/linggarjati.webm" controls preload="metadata" playsinline></video>
+        <div class="vcap"><b>▶ Rekaman arsip:</b> &ldquo;Linggadjati Getekend&rdquo; — dokumentasi penandatanganan Perjanjian Linggarjati. <span style="color:var(--ink-faint)">Polygoon / Nederlands Instituut voor Beeld en Geluid — Domain Publik.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Linggarjati 1946</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 13 · AGRESI I & KTN ══════════════════════ -->
+<section class="slide" data-title="Agresi Militer Belanda I (1947)" data-notes="
+<li>Jelaskan bahwa Linggarjati <b>dilanggar Belanda</b> lewat Agresi Militer I pada Juli 1947.</li>
+<li>Akibatnya masalah Indonesia&ndash;Belanda naik menjadi <b>masalah internasional</b> dan dibawa ke Dewan Keamanan PBB.</li>
+<li>Anggota Komisi Tiga Negara: <b>Australia</b> dipilih Indonesia, <b>Belgia</b> dipilih Belanda, dan <b>Amerika Serikat</b> dipilih oleh keduanya.</li>
+<li>Inilah momen ketika <b>diplomasi menang</b>: agresi militer justru merugikan Belanda secara politik.</li>">
+  <div class="eyebrow">Titik Balik — 1947</div>
+  <h2>Agresi Militer Belanda I &amp; lahirnya KTN</h2>
+  <div class="slide-body">
+    <div class="cols c-2a">
+      <div class="videobox">
+        <video src="assets/video/agresi.webm" controls preload="metadata" playsinline></video>
+        <div class="vcap"><b>▶ Rekaman arsip:</b> &ldquo;Nieuws uit Indonesië — Politionele Akties&rdquo;, dokumentasi aksi militer Belanda di Indonesia. <span style="color:var(--ink-faint)">Wikimedia Commons — Domain Publik.</span></div>
+      </div>
+      <div class="stack">
+        <div class="card danger" style="flex:0 0 auto">
+          <h3>Kesepakatan dirobek di lapangan</h3>
+          <p>Serangan militer Belanda pada Juli 1947 menghancurkan perjanjian yang baru saja ditandatangani dan memicu kecaman dunia.</p>
+        </div>
+        <div class="card good" style="flex:0 0 auto">
+          <h3 style="color:var(--teal)">Masalah RI menjadi masalah dunia</h3>
+          <p>Persoalan dibawa ke <strong>Dewan Keamanan PBB</strong>. Anggota Komisi Tiga Negara: <strong>Australia</strong> (pilihan Indonesia), <strong>Belgia</strong> (pilihan Belanda), dan <strong>Amerika Serikat</strong> (pilihan kedua pihak).</p>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/agresi-4.jpg" alt="Serdadu Belanda di tengah penduduk pada masa agresi militer">
+          <figcaption>Pendudukan militer di permukiman penduduk pada masa agresi.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Agresi Militer I</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 14 · RENVILLE ══════════════════════ -->
+<section class="slide" data-title="Perjanjian Renville (1948)" data-notes="
+<li><b>Latar belakang:</b> terjadi setelah Agresi Militer Belanda I.</li>
+<li><b>Mediator:</b> PBB membentuk Komisi Tiga Negara (KTN).</li>
+<li><b>Hasil:</b> RI harus menerima <b>Garis Van Mook</b> sehingga wilayah kekuasaan RI menyempit — tunjukkan petanya.</li>
+<li>Perundingan digelar di atas kapal perang Amerika <b>USS Renville</b> yang berlabuh di Tanjung Priok — wilayah netral.</li>
+<li>Tekankan: perjanjian ini <b>merugikan secara wilayah</b>, tetapi menjaga eksistensi Republik dan dukungan internasional.</li>">
+  <div class="eyebrow">Perundingan Kedua — 1948</div>
+  <h2>Perjanjian Renville</h2>
+  <div class="slide-body">
+    <div class="cols c-2b">
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <h3 style="color:var(--gold-soft)">Latar belakang &amp; kronologi</h3>
+          <ul class="bullets" style="margin-top:10px">
+            <li>Terjadi setelah <b>Agresi Militer Belanda I</b>.</li>
+            <li>PBB membentuk <b>Komisi Tiga Negara (KTN)</b> sebagai mediator.</li>
+            <li>RI harus menerima <b>Garis Van Mook</b> sehingga wilayah kekuasaan RI menyempit.</li>
+          </ul>
+        </div>
+        <figure class="fig contain" style="flex:1;min-height:0">
+          <img src="assets/img/peta-1948.png" alt="Peta wilayah Republik Indonesia tahun 1948">
+          <figcaption>Wilayah RI setelah Renville (hijau), 1948 — akibat Garis Van Mook.</figcaption>
+        </figure>
+      </div>
+      <div class="stack">
+        <div class="cols c-2" style="flex:1;min-height:0">
+          <figure class="fig">
+            <img src="assets/img/renville-delegasi.jpg" alt="Delegasi Indonesia dalam Perjanjian Renville">
+            <figcaption>Delegasi Indonesia di atas kapal USS Renville, 1948.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="assets/img/renville-kapal.jpg" alt="Kapal USS Renville">
+            <figcaption>USS Renville — kapal AS tempat perundingan digelar.</figcaption>
+          </figure>
+        </div>
+        <div class="videobox" style="flex:1.1;min-height:0">
+          <video src="assets/video/renville.webm" controls preload="metadata" playsinline></video>
+          <div class="vcap"><b>▶ Rekaman arsip:</b> penandatanganan perjanjian gencatan senjata di atas kapal <i>Renville</i>. <span style="color:var(--ink-faint)">Open Beelden / Polygoon — CC BY-SA 3.0 NL.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Renville 1948</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 15 · ROEM–ROYEN ══════════════════════ -->
+<section class="slide" data-title="Perundingan Roem–Royen (1949)" data-notes="
+<li><b>Latar belakang:</b> dilaksanakan setelah Agresi Militer Belanda II (Desember 1948), saat Yogyakarta diduduki dan para pemimpin RI ditawan.</li>
+<li>Belanda mendapat <b>tekanan internasional</b> yang sangat keras untuk kembali berunding.</li>
+<li><b>Hasil:</b> kesepakatan pengembalian Yogyakarta kepada RI dan membuka jalan menuju <b>Konferensi Meja Bundar (KMB)</b>.</li>
+<li>Ini adalah puncak keberhasilan strategi diplomasi Indonesia.</li>">
+  <div class="eyebrow">Perundingan Ketiga — 1949</div>
+  <h2>Perundingan Roem&ndash;Royen</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="stack">
+        <div class="card" style="flex:0 0 auto">
+          <h3 style="color:var(--gold-soft)">Latar belakang &amp; kronologi</h3>
+          <ul class="bullets" style="margin-top:10px">
+            <li>Dilaksanakan setelah <b>Agresi Militer Belanda II</b>.</li>
+            <li>Belanda mendapat <b>tekanan internasional</b> untuk kembali berunding.</li>
+            <li>Menghasilkan kesepakatan <b>pengembalian Yogyakarta</b> kepada RI dan membuka jalan menuju <b>Konferensi Meja Bundar (KMB)</b>.</li>
+          </ul>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/agresi-2.jpg" alt="Pasukan Belanda memasuki Yogyakarta, Desember 1948">
+          <figcaption>Agresi Militer Belanda II — pasukan Belanda memasuki Yogyakarta, Desember 1948.</figcaption>
+        </figure>
+      </div>
+      <div class="stack">
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/roem-royen-doc.png" alt="Suasana perundingan Roem-Royen 1949">
+          <figcaption>Meja perundingan Roem&ndash;Royen, 1949.</figcaption>
+        </figure>
+        <div class="card good" style="flex:0 0 auto">
+          <h3 style="color:var(--teal)">Mengapa penting?</h3>
+          <p>Roem&ndash;Royen mengembalikan <strong>ibu kota Republik</strong> dan menjadi jembatan langsung menuju KMB — forum tempat kedaulatan Indonesia akhirnya diakui.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Roem&ndash;Royen 1949</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 16 · TOKOH ══════════════════════ -->
+<section class="slide" data-title="Tokoh Kunci & Strategi" data-notes="
+<li>Jawaban pertanyaan nomor 2 pada kasus sejarah.</li>
+<li><b>Sutan Sjahrir</b> (Linggarjati) — diplomasi dan kompromi.</li>
+<li><b>Amir Sjarifuddin</b> (Renville) — diplomasi melalui mediasi PBB.</li>
+<li><b>Mohammad Roem</b> (Roem&ndash;Royen) — diplomasi untuk memperoleh pengakuan internasional.</li>
+<li>Benang merah ketiganya: <b>semuanya memilih jalur diplomasi</b>, bukan konfrontasi total.</li>">
+  <div class="eyebrow">Pertanyaan 2 — Bagian II</div>
+  <h2>Tokoh kunci dan strategi yang dipilih</h2>
+  <div class="slide-body">
+    <div class="cols c-3">
+      <div class="portrait">
+        <div class="ph"><img src="assets/img/tokoh-sjahrir.jpg" alt="Sutan Sjahrir"></div>
+        <div class="pb">
+          <div class="pn">Sutan Sjahrir</div>
+          <div class="pr">Linggarjati · 1946</div>
+          <div class="pd">Strategi: <strong>diplomasi dan kompromi</strong>. Bersedia menerima pengakuan <em>de facto</em> yang terbatas demi mengamankan eksistensi Republik.</div>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="ph"><img src="assets/img/tokoh-amir.jpg" alt="Amir Sjarifuddin"></div>
+        <div class="pb">
+          <div class="pn">Amir Sjarifuddin</div>
+          <div class="pr">Renville · 1948</div>
+          <div class="pd">Strategi: <strong>diplomasi melalui mediasi PBB</strong>. Memanfaatkan Komisi Tiga Negara agar konflik tetap berada di forum internasional.</div>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="ph"><img src="assets/img/tokoh-roem.jpg" alt="Mohammad Roem"></div>
+        <div class="pb">
+          <div class="pn">Mohammad Roem</div>
+          <div class="pr">Roem&ndash;Royen · 1949</div>
+          <div class="pd">Strategi: <strong>diplomasi untuk memperoleh pengakuan internasional</strong>, membuka jalan menuju Konferensi Meja Bundar.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card accent" style="flex:0 0 auto">
+      <p style="font-size:16.5px;color:var(--ink)">Meski berbeda situasi dan tekanan, <strong>ketiganya memilih jalur yang sama: perundingan</strong>. Bagi Republik yang muda dan kalah secara persenjataan, meja runding adalah medan yang paling menguntungkan.</p>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Tokoh</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 17 · DAMPAK ══════════════════════ -->
+<section class="slide" data-title="Apakah Strategi Itu Berhasil?" data-notes="
+<li>Jawaban pertanyaan nomor 3 pada kasus sejarah: <b>Ya, meskipun harus melalui beberapa kompromi.</b></li>
+<li>Bacakan dampak positif satu per satu — puncaknya pengakuan kedaulatan 27 Desember 1949.</li>
+<li>Jujur juga menyebut dampak negatif: kehilangan wilayah, perbedaan penafsiran, dan pelanggaran berulang oleh Belanda.</li>
+<li>Kesimpulan: <b>harga diplomasi memang mahal, tetapi hasil akhirnya adalah kemerdekaan penuh.</b></li>">
+  <div class="eyebrow">Pertanyaan 3 — Bagian II</div>
+  <h2>Apakah strategi itu berhasil?</h2>
+  <div class="slide-body">
+    <div class="card accent" style="flex:0 0 auto">
+      <p style="font-size:19px;color:var(--ink)"><strong>Ya</strong> — meskipun harus melalui beberapa kompromi yang berat.</p>
+    </div>
+    <div class="cols c-2">
+      <div class="card good">
+        <div class="eyebrow" style="color:var(--teal);margin-bottom:12px">Dampak Positif</div>
+        <ul class="bullets teal tight">
+          <li>Indonesia memperoleh <b>dukungan internasional</b>.</li>
+          <li><b>PBB semakin aktif</b> membantu penyelesaian konflik.</li>
+          <li>Belanda mendapat <b>tekanan dari dunia internasional</b>.</li>
+          <li>Membuka jalan menuju <b>Konferensi Meja Bundar</b>.</li>
+          <li>Belanda akhirnya <b>mengakui kedaulatan Indonesia pada 27 Desember 1949</b>.</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <div class="card danger" style="flex:0 0 auto">
+          <div class="eyebrow" style="color:var(--red);margin-bottom:12px">Dampak Negatif</div>
+          <ul class="bullets red tight">
+            <li>Indonesia sempat <b>kehilangan sebagian wilayah</b>.</li>
+            <li>Terjadi <b>perbedaan penafsiran</b> isi perjanjian.</li>
+            <li>Belanda <b>beberapa kali melanggar</b> hasil kesepakatan.</li>
+          </ul>
+        </div>
+        <figure class="fig" style="flex:1;min-height:0">
+          <img src="assets/img/kmb-roem.jpg" alt="Meja delegasi Republik Indonesia pada Konferensi Meja Bundar" style="object-position:center 38%">
+          <figcaption>Buah empat tahun diplomasi: delegasi RI duduk sejajar di meja KMB — Sumitro Djojohadikusumo, Sukiman Wirjosandjojo, Mohammad Roem, dan Mohammad Hatta sebagai ketua delegasi.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · Dampak</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 18 · KMB & KEDAULATAN ══════════════════════ -->
+<section class="slide" data-title="27 Desember 1949 — Pengakuan Kedaulatan" data-notes="
+<li>Puncak seluruh rangkaian perundingan: <b>Konferensi Meja Bundar</b> di Den Haag, dan penyerahan kedaulatan pada <b>27 Desember 1949</b>.</li>
+<li>Dua tanda tangan pada hari yang sama: <b>Hatta</b> di Ridderzaal dan <b>Ratu Juliana</b> pada akta penyerahan kedaulatan.</li>
+<li>Pesan kuncinya: <b>kemerdekaan direbut dengan senjata, tetapi diakui dunia lewat diplomasi.</b></li>">
+  <div class="eyebrow">Puncak — 27 Desember 1949</div>
+  <h2>Konferensi Meja Bundar &amp; pengakuan kedaulatan</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="stack">
+        <div class="cols c-2" style="flex:1;min-height:0">
+          <figure class="fig">
+            <img src="assets/img/kmb-hatta.jpg" alt="Mohammad Hatta menandatangani naskah di Ridderzaal">
+            <figcaption>Mohammad Hatta menandatangani naskah di sidang penutup KMB, Ridderzaal, Den Haag.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="assets/img/kedaulatan-juliana.jpg" alt="Ratu Juliana menandatangani akta penyerahan kedaulatan">
+            <figcaption>Ratu Juliana menandatangani akta penyerahan kedaulatan kepada Indonesia.</figcaption>
+          </figure>
+        </div>
+        <div class="card good" style="flex:0 0 auto">
+          <p style="font-size:16.5px;color:var(--ink)">Belanda akhirnya mengakui kedaulatan Republik Indonesia Serikat pada <strong>27 Desember 1949</strong> — buah dari empat tahun perjuangan bersenjata <em>dan</em> diplomasi.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="videobox" style="flex:1;min-height:0">
+          <video src="assets/video/kmb.webm" controls preload="metadata" playsinline></video>
+          <div class="vcap"><b>▶ Rekaman arsip:</b> &ldquo;Rondom de Ronde Tafel Conferentie&rdquo; — suasana Konferensi Meja Bundar. <span style="color:var(--ink-faint)">Wikimedia Commons — Domain Publik.</span></div>
+        </div>
+        <div class="videobox" style="flex:1;min-height:0">
+          <video src="assets/video/kedaulatan.webm" controls preload="metadata" playsinline></video>
+          <div class="vcap"><b>▶ Rekaman arsip:</b> penyerahan kedaulatan dan kedatangan Presiden Soekarno di Jakarta. <span style="color:var(--ink-faint)">Open Beelden / Polygoon — CC BY-SA 3.0 NL.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian II · KMB 1949</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 19 · DIVIDER III ══════════════════════ -->
+<section class="slide divider" data-title="Bagian III — Sintesis Perbandingan" data-notes="
+<li>Transisi menuju analisis. Ini bagian yang paling dinilai — sampaikan dengan tenang dan runtut.</li>
+<li>Pertanyaan pemandu: <b>&ldquo;Apa yang sama, apa yang berbeda, dan apa yang masih bisa kita pakai hari ini?&rdquo;</b></li>">
+  <div class="divider-bg"><img src="assets/img/kmb-sidang.jpg" alt="Sidang Konferensi Meja Bundar"></div>
+  <div class="slide-body">
+    <div class="big-num">III</div>
+    <div class="eyebrow">Bagian Ketiga</div>
+    <h2>Sintesis Perbandingan</h2>
+    <p class="sub">Menjembatani dua zaman: apa yang berulang, apa yang berubah, dan pelajaran apa yang masih hidup hingga hari ini.</p>
+  </div>
+  <div class="chrome"><span class="tag">Bagian III · Sintesis</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 20 · PERSAMAAN ══════════════════════ -->
+<section class="slide" data-title="Persamaan Pola" data-notes="
+<li>Empat persamaan: menghadapi pihak yang lebih kuat, diplomasi sebagai strategi utama, tujuan menjaga kedaulatan, dan butuh dukungan internasional.</li>
+<li>Sampaikan bahwa persamaan ini menunjukkan adanya <b>pola berulang</b> dalam sejarah kebangsaan Indonesia.</li>">
+  <div class="eyebrow">Pertanyaan 1 — Bagian III</div>
+  <h2>Persamaan pola kedua kasus</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="stack">
+        <div class="card accent mid" style="flex:1">
+          <h3>1 &nbsp;Menghadapi pihak yang lebih kuat</h3>
+          <p>Keduanya berhadapan dengan pihak yang memiliki <strong>pengaruh dan kekuatan jauh lebih besar</strong> — dulu Belanda, kini kekuatan-kekuatan global yang menentukan pasar energi.</p>
+        </div>
+        <div class="card accent mid" style="flex:1">
+          <h3>2 &nbsp;Diplomasi sebagai strategi utama</h3>
+          <p>Bukan konfrontasi bersenjata, melainkan <strong>perundingan dan lobi internasional</strong> yang dijadikan senjata utama.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card accent mid" style="flex:1">
+          <h3>3 &nbsp;Tujuan yang sama</h3>
+          <p>Menjaga <strong>kepentingan dan kedaulatan nasional</strong> — baik kedaulatan politik maupun kedaulatan ekonomi.</p>
+        </div>
+        <div class="card accent mid" style="flex:1">
+          <h3>4 &nbsp;Membutuhkan dukungan internasional</h3>
+          <p>Dulu lewat <strong>PBB dan Komisi Tiga Negara</strong>; kini lewat <strong>kerja sama multilateral</strong> untuk menjaga keamanan jalur pelayaran dan pasokan energi.</p>
+        </div>
+      </div>
+    </div>
+    <div class="quote" style="flex:0 0 auto;font-size:22px">Pola yang sama terulang: yang kecil bertahan bukan dengan melawan, melainkan dengan <em>membuat dunia berpihak padanya.</em></div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian III · Persamaan</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 21 · PERBEDAAN ══════════════════════ -->
+<section class="slide" data-title="Perbedaan Pola" data-notes="
+<li>Tiga perbedaan pokok: <b>jenis ancaman</b>, <b>tujuan diplomasi</b>, dan <b>posisi Indonesia</b>.</li>
+<li>Yang paling penting: dulu Indonesia <b>pihak yang berhadapan langsung</b>; kini Indonesia <b>bukan pihak berkonflik</b>, tetapi tetap terdampak.</li>
+<li>Perbedaan posisi inilah yang membuat pilihan strategi hari ini berbeda — netralitas menjadi mungkin sekaligus menguntungkan.</li>">
+  <div class="eyebrow">Pertanyaan 1 — Bagian III</div>
+  <h2>Perbedaan pola kedua kasus</h2>
+  <div class="slide-body">
+    <div class="tbl-wrap" style="flex:0 0 auto">
+      <table>
+        <thead><tr><th style="width:22%">Aspek</th><th style="width:39%">Masa 1945–1949</th><th style="width:39%">Masa Kini (Selat Hormuz)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Jenis ancaman</td>
+            <td>Ancaman berupa <strong>penjajahan dan agresi militer</strong> Belanda.</td>
+            <td>Ancaman berupa <strong>gangguan ekonomi dan ketahanan energi</strong> akibat konflik internasional.</td>
+          </tr>
+          <tr>
+            <td>Tujuan diplomasi</td>
+            <td>Diplomasi untuk <strong>mempertahankan kemerdekaan politik</strong>.</td>
+            <td>Diplomasi untuk <strong>menjaga stabilitas ekonomi dan pasokan energi</strong>.</td>
+          </tr>
+          <tr>
+            <td>Posisi Indonesia</td>
+            <td>Indonesia <strong>berhadapan langsung</strong> dengan Belanda.</td>
+            <td>Indonesia <strong>bukan pihak yang berkonflik</strong>, tetapi terdampak secara ekonomi.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols c-2" style="flex:1;min-height:0">
+      <figure class="fig">
+        <img src="assets/img/linggarjati-draft.jpg" alt="Penandatanganan naskah Perjanjian Linggarjati" style="object-position:center 22%">
+        <figcaption>Dulu — yang dipertaruhkan di meja runding adalah wilayah dan pengakuan negara.</figcaption>
+      </figure>
+      <figure class="fig contain">
+        <img src="assets/img/konsumsi-energi.png" alt="Grafik konsumsi energi Indonesia menurut sumber">
+        <figcaption>Kini — yang dipertaruhkan adalah pasokan energi yang menopang seluruh ekonomi.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian III · Perbedaan</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 22 · RELEVANSI ══════════════════════ -->
+<section class="slide" data-title="Nilai yang Masih Relevan" data-notes="
+<li>Jawaban pertanyaan nomor 2 Bagian III — ini inti argumen presentasi, sampaikan pelan-pelan.</li>
+<li>Argumen utama: strategi diplomasi 1945&ndash;1949 <b>masih sangat relevan</b>. Indonesia tetap mengedepankan politik luar negeri <b>bebas aktif</b>, menjaga hubungan baik dengan semua pihak, dan menghindari keterlibatan dalam konflik bersenjata.</li>
+<li>Namun ada <b>catatan pembeda</b>: kini diplomasi harus ditopang ketahanan ekonomi, diversifikasi energi, dan kerja sama internasional — karena ancamannya bukan lagi penjajahan, melainkan dinamika geopolitik global.</li>">
+  <div class="eyebrow">Pertanyaan 2 — Bagian III</div>
+  <h2>Nilai 1945–1949 yang masih relevan hari ini</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="card good">
+        <div class="eyebrow" style="color:var(--teal);margin-bottom:12px">Masih Relevan</div>
+        <p style="font-size:16.5px">Strategi diplomasi yang diterapkan Indonesia pada 1945–1949 <strong>masih sangat relevan hingga saat ini</strong>. Dalam menghadapi konflik internasional seperti ketegangan di Selat Hormuz, Indonesia tetap mengedepankan <strong>politik luar negeri bebas aktif</strong>, menjaga hubungan baik dengan semua pihak, serta menghindari keterlibatan dalam konflik bersenjata.</p>
+        <p style="font-size:16.5px;margin-top:12px">Pendekatan ini membantu Indonesia melindungi kepentingan nasional — khususnya <strong>ketahanan energi dan stabilitas ekonomi</strong> — tanpa harus menggunakan kekuatan militer.</p>
+      </div>
+      <div class="card accent">
+        <div class="eyebrow" style="margin-bottom:12px">Yang Perlu Ditambahkan</div>
+        <p style="font-size:16.5px">Namun, berbeda dengan masa perjuangan kemerdekaan, saat ini diplomasi perlu <strong>didukung oleh ketahanan ekonomi, diversifikasi sumber energi, dan penguatan kerja sama internasional</strong>.</p>
+        <p style="font-size:16.5px;margin-top:12px">Sebab ancaman yang dihadapi <strong>tidak lagi berupa penjajahan</strong>, melainkan dampak dari <strong>dinamika geopolitik global</strong> yang tidak bisa dilawan hanya dengan kekuatan bersenjata.</p>
+      </div>
+    </div>
+    <div class="chips" style="flex:0 0 auto">
+      <span class="chip"><b>Nilai warisan:</b> Bebas aktif</span>
+      <span class="chip"><b>Nilai warisan:</b> Diplomasi &gt; konfrontasi</span>
+      <span class="chip"><b>Nilai warisan:</b> Cari dukungan internasional</span>
+      <span class="chip"><b>Tuntutan baru:</b> Ketahanan ekonomi</span>
+      <span class="chip"><b>Tuntutan baru:</b> Diversifikasi energi</span>
+      <span class="chip"><b>Tuntutan baru:</b> Transisi energi terbarukan</span>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Bagian III · Relevansi</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 23 · PENUTUP ══════════════════════ -->
+<section class="slide" data-title="Kesimpulan" data-notes="
+<li>Rangkum dalam satu kalimat: <b>bentuk ancamannya berubah, tetapi caranya bertahan tetap sama — diplomasi.</b></li>
+<li>Tutup dengan kalimat pada slide, lalu ucapkan terima kasih dan buka sesi tanya jawab.</li>">
+  <div class="eyebrow">Penutup</div>
+  <h2>Kedaulatan itu dijaga, bukan sekali direbut</h2>
+  <div class="slide-body">
+    <div class="cols c-3" style="flex:0 0 auto">
+      <div class="card">
+        <div style="font-family:var(--serif);font-size:32px;color:var(--gold-soft);line-height:1">1945–1949</div>
+        <p style="margin-top:8px;font-size:15px">Republik yang kalah persenjataan memenangkan <strong>pengakuan dunia</strong> di meja runding.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--serif);font-size:32px;color:var(--gold-soft);line-height:1">Kini</div>
+        <p style="margin-top:8px;font-size:15px">Negara yang tidak ikut berperang tetap harus <strong>menjaga dapurnya sendiri</strong> dari guncangan dunia.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--serif);font-size:32px;color:var(--gold-soft);line-height:1">Benang Merah</div>
+        <p style="margin-top:8px;font-size:15px">Indonesia selalu memilih <strong>berunding sebelum berperang</strong> — dan justru dari situlah dunia mengakui kita.</p>
+      </div>
+    </div>
+    <div class="quote" style="flex:0 0 auto">Yang berubah adalah bentuk ancamannya — dari meriam menjadi harga minyak. Yang tidak berubah adalah cara kita bertahan: <em>berunding, tanpa menggadaikan kepentingan bangsa.</em>
+      <span class="src">Terima kasih · Sesi tanya jawab</span>
+    </div>
+    <figure class="fig" style="flex:1;min-height:0">
+      <img src="assets/img/proklamasi-parade.jpg" alt="Pawai rakyat setelah Proklamasi Kemerdekaan Indonesia" style="object-position:center 45%">
+      <figcaption>Pawai rakyat setelah Proklamasi — kedaulatan pada akhirnya milik dan tanggung jawab seluruh bangsa.</figcaption>
+    </figure>
+  </div>
+  <div class="chrome"><span class="tag">Penutup</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 24 · SUMBER: MATERI ══════════════════════ -->
+<section class="slide" data-title="Sumber — Materi & Rujukan" data-notes="
+<li>Slide ini boleh dilewati cepat saat presentasi, tetapi penting untuk penilaian: menunjukkan rujukan yang dipakai.</li>
+<li>Kalau ditanya guru, sebutkan dua jurnal ilmiahnya: <b>SOSIOHUMANIORA (UST Yogyakarta)</b> dan <b>Jurnal Wahana Pendidikan (Universitas Galuh)</b>.</li>">
+  <div class="eyebrow">Daftar Pustaka — 1 dari 2</div>
+  <h2>Sumber materi, data, dan rujukan ilmiah</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:14px">Buku &amp; Jurnal</div>
+        <div class="srcs">
+          <div><b>Safitry, M., Utami, I. W. P., &amp; Ilyas, Z.</b> (2021). <i>Sejarah untuk SMA/SMK Kelas XI.</i> Jakarta: Pusat Kurikulum dan Perbukuan, Kemendikbudristek.
+            <span class="u">buku.kemdikbud.go.id/katalog/sejarah-untuk-smasmk-kelas-xi</span></div>
+          <div><b>Suparjan, Edy, &amp; Khaldun, I.</b> (2021). &ldquo;Politik Diplomasi Masa Revolusi Menuju Pengakuan Kemerdekaan Indonesia (1946–1949)&rdquo;. <i>SOSIOHUMANIORA: Jurnal Ilmiah Ilmu Sosial dan Humaniora,</i> 7(1), 122–131.
+            <span class="u">jurnal.ustjogja.ac.id/index.php/sosio/article/view/9431</span></div>
+          <div><b>Budiman, A.</b> (2017). &ldquo;Sejarah Diplomasi Roem-Roijen dalam Perjuangan Mempertahankan Kemerdekaan Republik Indonesia Tahun 1949&rdquo;. <i>Jurnal Wahana Pendidikan,</i> 4(1). Universitas Galuh.
+            <span class="u">jurnal.unigal.ac.id/jwp/article/view/388</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:14px">Data &amp; Dokumen Resmi</div>
+        <div class="srcs">
+          <div><b>Kementerian Keuangan Republik Indonesia</b> (2026). <i>APBN KITA: Kinerja dan Fakta</i> — bahan konferensi pers, edisi Februari 2026.
+            <span class="u">media.kemenkeu.go.id — Publikasi-Web-Konpers-APBN-Kita-(Februari-2026).pdf</span></div>
+          <div><b>U.S. Energy Information Administration (EIA).</b> <i>World Oil Transit Chokepoints</i> — ±20 juta barel/hari melintasi Selat Hormuz pada 2024, setara ±20% konsumsi minyak dunia.
+            <span class="u">eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints</span></div>
+          <div><b>Statistical Review of World Energy</b> (edisi 2025) — data neraca minyak dan konsumsi energi Indonesia (grafik pada slide 5 dan 21), divisualisasikan melalui Wikimedia Commons.</div>
+          <div><b>Naskah tugas kelompok:</b> &ldquo;Perundingan RI dengan Pihak Asing tentang Kedaulatan Ekonomi&rdquo;.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Daftar Pustaka</span><span class="num"></span></div>
+</section>
+
+<!-- ══════════════════════ 25 · SUMBER: ARSIP ══════════════════════ -->
+<section class="slide" data-title="Sumber — Arsip Foto & Video" data-notes="
+<li>Tekankan bahwa seluruh foto dan video berlisensi terbuka (Domain Publik / CC) — bukan hasil unduhan sembarangan.</li>
+<li>Sebutkan bahwa semua berkas sudah tersimpan di folder <b>assets/</b> sehingga presentasi jalan tanpa internet.</li>">
+  <div class="eyebrow">Daftar Pustaka — 2 dari 2</div>
+  <h2>Kredit arsip foto dan video</h2>
+  <div class="slide-body">
+    <div class="cols c-2">
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:14px">Arsip Sejarah 1945–1949</div>
+        <div class="srcs">
+          <div><b>Nationaal Archief / Anefo</b> (Belanda) — dokumentasi perundingan Linggarjati, Renville, Roem&ndash;Royen, KMB, penyerahan kedaulatan, dan agresi militer.</div>
+          <div><b>Polygoon &amp; Open Beelden / Nederlands Instituut voor Beeld en Geluid</b> — lima rekaman film berita 1946–1950 yang tertanam pada slide 12, 13, 14, dan 18.</div>
+          <div><b>IPPHOS</b> dan <b>Frans Mendur</b> — dokumentasi Proklamasi Kemerdekaan dan pengibaran Sang Saka Merah Putih.</div>
+          <div><b>Nederlands-Indische Regerings Voorlichtingsdienst (NIGIS)</b> — dokumentasi konferensi Linggarjati.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:14px">Peta, Citra, dan Grafik</div>
+        <div class="srcs">
+          <div><b>NASA / MODIS Land Rapid Response Team</b> — citra satelit Selat Hormuz.</div>
+          <div><b>Library of Congress</b> — peta minyak dan gas Timur Tengah.</div>
+          <div><b>Global Solar Atlas — World Bank ESMAP &amp; Solargis</b> — peta potensi tenaga surya Indonesia.</div>
+          <div><b>Wikimedia Commons</b> — seluruh berkas foto, video, peta, dan grafik berlisensi <b>Domain Publik, CC0, CC BY, atau CC BY-SA</b>.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card accent" style="flex:0 0 auto">
+      <p style="font-size:15px">Seluruh berkas media telah diunduh ke folder <span style="font-family:var(--mono);color:var(--gold-soft)">assets/</span> di samping berkas presentasi ini, sehingga presentasi tetap dapat ditayangkan <strong>tanpa koneksi internet</strong>.</p>
+    </div>
+  </div>
+  <div class="chrome"><span class="tag">Kredit Arsip</span><span class="num"></span></div>
+</section>
+
+</div><!-- /stage -->
+</div><!-- /viewport -->
+
+<!-- ============================ UI OVERLAYS ============================ -->
+<div id="hud">
+  <button id="btnPrev" title="Slide sebelumnya (←)">‹</button>
+  <span id="counter">01 / 25</span>
+  <button id="btnNext" title="Slide berikutnya (→)">›</button>
+  <button id="btnOv" title="Ikhtisar semua slide (O)">▦</button>
+  <button id="btnNotes" title="Catatan penyaji (N)">✎</button>
+  <button id="btnFs" title="Layar penuh (F)">⛶</button>
+  <button id="btnHelp" title="Bantuan (?)">?</button>
+</div>
+
+<div id="notes"><div class="nh">Catatan Penyaji</div><ul class="nb" id="notesBody"></ul></div>
+
+<div id="overview"><div id="ovGrid"></div></div>
+
+<div id="help"><div class="box">
+  <h3>Cara menjalankan presentasi</h3>
+  <dl>
+    <dt>→ / ␣ / PgDn</dt><dd>Slide berikutnya</dd>
+    <dt>← / PgUp</dt><dd>Slide sebelumnya</dd>
+    <dt>Home / End</dt><dd>Slide pertama / terakhir</dd>
+    <dt>1–9</dt><dd>Lompat ke slide tertentu</dd>
+    <dt>O</dt><dd>Ikhtisar semua slide</dd>
+    <dt>N</dt><dd>Buka / tutup catatan penyaji</dd>
+    <dt>F</dt><dd>Layar penuh</dd>
+    <dt>Esc</dt><dd>Tutup panel yang terbuka</dd>
+    <dt>?</dt><dd>Tampilkan bantuan ini</dd>
+  </dl>
+  <div class="close">Tekan Esc atau klik di mana saja untuk menutup.</div>
+</div></div>
+
+<script>
+(function(){
+  "use strict";
+  var slides  = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total   = slides.length;
+  var idx     = 0;
+
+  var stage    = document.getElementById('stage');
+  var viewport = document.getElementById('viewport');
+  var progress = document.getElementById('progress');
+  var counter  = document.getElementById('counter');
+  var notes    = document.getElementById('notes');
+  var notesBody= document.getElementById('notesBody');
+  var overview = document.getElementById('overview');
+  var ovGrid   = document.getElementById('ovGrid');
+  var help     = document.getElementById('help');
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+  /* slide numbers are generated, never hand-maintained */
+  slides.forEach(function(s, i){
+    var n = s.querySelector('.chrome .num');
+    if (n) n.textContent = pad(i + 1);
+  });
+
+  /* responsive scaling of the fixed 1280x720 stage */
+  function fit(){
+    var margin = 32;
+    var s = Math.min((viewport.clientWidth - margin) / 1280, (viewport.clientHeight - margin) / 720);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+
+  function show(n){
+    n = Math.max(0, Math.min(total - 1, n));
+    if (slides[idx]) {
+      slides[idx].classList.remove('active');
+      Array.prototype.forEach.call(slides[idx].querySelectorAll('video'), function(v){
+        if (!v.paused) v.pause();
+      });
+    }
+    idx = n;
+    slides[idx].classList.add('active');
+    counter.textContent = pad(idx + 1) + ' / ' + pad(total);
+    progress.style.width = (idx / (total - 1) * 100) + '%';
+    notesBody.innerHTML = slides[idx].getAttribute('data-notes') || '<li>Tidak ada catatan untuk slide ini.</li>';
+    Array.prototype.forEach.call(ovGrid.children, function(c, i){ c.classList.toggle('cur', i === idx); });
+    try { location.replace('#' + (idx + 1)); } catch (e) {}
+  }
+  function next(){ show(idx + 1); }
+  function prev(){ show(idx - 1); }
+
+  slides.forEach(function(s, i){
+    var c = document.createElement('div');
+    c.className = 'ov-card';
+    c.innerHTML = '<div class="n">' + pad(i + 1) + '</div><div class="t">' +
+                  (s.getAttribute('data-title') || 'Slide ' + (i + 1)) + '</div>';
+    c.addEventListener('click', function(){ show(i); closeAll(); });
+    ovGrid.appendChild(c);
+  });
+
+  function closeAll(){
+    overview.classList.remove('open');
+    help.classList.remove('open');
+  }
+
+  document.getElementById('btnNext').addEventListener('click', next);
+  document.getElementById('btnPrev').addEventListener('click', prev);
+  document.getElementById('btnOv').addEventListener('click', function(){
+    help.classList.remove('open'); overview.classList.toggle('open');
+  });
+  document.getElementById('btnNotes').addEventListener('click', function(){ notes.classList.toggle('open'); });
+  document.getElementById('btnHelp').addEventListener('click', function(){
+    overview.classList.remove('open'); help.classList.toggle('open');
+  });
+  document.getElementById('btnFs').addEventListener('click', function(){
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen();
+  });
+  help.addEventListener('click', closeAll);
+
+  stage.addEventListener('click', function(e){
+    if (e.target.closest('video, .videobox')) return;
+    next();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'Escape'){
+      if (overview.classList.contains('open') || help.classList.contains('open')) closeAll();
+      else if (notes.classList.contains('open')) notes.classList.remove('open');
+      return;
+    }
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Spacebar'){ e.preventDefault(); next(); return; }
+    if (k === 'ArrowLeft'  || k === 'PageUp'){ e.preventDefault(); prev(); return; }
+    if (k === 'Home'){ e.preventDefault(); show(0); return; }
+    if (k === 'End'){ e.preventDefault(); show(total - 1); return; }
+    if (k === 'o' || k === 'O'){ help.classList.remove('open'); overview.classList.toggle('open'); return; }
+    if (k === 'n' || k === 'N'){ notes.classList.toggle('open'); return; }
+    if (k === '?' || (k === '/' && e.shiftKey)){ overview.classList.remove('open'); help.classList.toggle('open'); return; }
+    if (k === 'f' || k === 'F'){
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+      return;
+    }
+    if (/^[1-9]$/.test(k)){ show(parseInt(k, 10) - 1); return; }
+  });
+
+  var tx = null;
+  stage.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', function(e){
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 55){ dx < 0 ? next() : prev(); }
+    tx = null;
+  }, {passive:true});
+
+  fit();
+  var start = parseInt((location.hash || '').replace('#',''), 10);
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>
