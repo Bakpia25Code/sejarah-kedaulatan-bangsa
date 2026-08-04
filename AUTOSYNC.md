@@ -12,23 +12,28 @@ di-*commit* dan di-*push* ke GitHub, lalu situsnya ikut ter-update.
 > Autosync berjalan otomatis — langkah pemberian izin di bawah hanya perlu diulang
 > kalau macOS di-install ulang atau izinnya dicabut.
 
-## Cek status sekarang
-
-Tempel perintah ini di Terminal — hasilnya langsung memberi tahu autosync sudah
-aktif atau belum:
+## Cek status
 
 ```bash
-cd ~/Downloads/"SEJARAH TUGAS 1 KELAS XII" && : > .autosync/sync.log && \
-launchctl kickstart -p gui/$UID/com.bakpia25.sejarah-autosync >/dev/null 2>&1 && \
-sleep 12 && cat .autosync/sync.log
+launchctl print gui/$UID/com.bakpia25.sejarah-autosync | grep -E "state|runs"
+tail -5 ~/Library/Logs/sejarah-autosync.log
 ```
 
 | Yang muncul | Artinya |
 |---|---|
-| `cek : tidak ada perubahan` | ✅ **Aktif** — autosync sudah jalan |
-| `commit : …` lalu `push : berhasil` | ✅ **Aktif** — perubahan sudah terunggah |
-| `can't open input file` | ❌ Full Disk Access belum aktif — ikuti langkah di bawah |
+| `state = not running` + `runs` bertambah saat berkas diubah | ✅ Normal — agent siaga, jalan saat dibutuhkan |
+| `commit : …` lalu `push : berhasil` | ✅ Perubahan sudah terunggah |
+| `can't open input file` | ❌ Full Disk Access belum aktif |
 | `GAGAL : folder tidak terbaca` | ❌ Full Disk Access belum aktif |
+
+**Uji sungguhan:** ubah dan simpan berkas apa pun di folder ini, tunggu ±15 detik,
+lalu jalankan `git log --oneline -1`. Kalau muncul commit baru berawalan
+`Autosync:`, berarti semuanya bekerja.
+
+> Log ada di `~/Library/Logs/sejarah-autosync.log` — **sengaja di luar folder
+> proyek**. Kalau log ditulis di dalam folder yang dipantau launchd, setiap
+> penulisan log akan memicu skrip jalan lagi, sehingga terjadi loop tak berujung.
+> Ini pernah terjadi dan sudah diperbaiki; jangan pindahkan log-nya ke dalam repo.
 
 ---
 
