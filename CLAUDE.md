@@ -124,9 +124,16 @@ Deploy memakai **GitHub Pages dari branch `main`, folder root** — bukan GitHub
 Actions. Token `gh` di mesin ini **tidak punya scope `workflow`**, jadi berkas
 di `.github/workflows/` akan ditolak saat push. Jangan menambahkannya.
 
-Autosync latar belakang lewat launchd sudah dipasang tetapi butuh Full Disk
-Access untuk `/bin/zsh`, karena macOS memblokir proses latar belakang membaca
-`~/Downloads`. Lihat `AUTOSYNC.md`.
+Autosync latar belakang lewat launchd **sudah aktif** — setiap penyimpanan berkas
+otomatis di-commit dan di-push. Log-nya di `~/Library/Logs/sejarah-autosync.log`.
+
+> ⚠️ Log dan berkas kunci **wajib berada di luar folder proyek**. Kalau ditulis
+> di dalam folder yang dipantau `WatchPaths`, setiap penulisan log memicu agent
+> jalan lagi — loop tak berujung yang menghabiskan CPU. Ini pernah terjadi dan
+> sudah diperbaiki; jangan dikembalikan ke dalam repo.
+
+Autosync bergantung pada Full Disk Access untuk `/bin/zsh`, karena macOS
+memblokir proses latar belakang membaca `~/Downloads`. Lihat `AUTOSYNC.md`.
 
 ## Catatan privasi
 
