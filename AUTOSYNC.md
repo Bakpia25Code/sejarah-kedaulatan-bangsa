@@ -8,6 +8,10 @@ di-*commit* dan di-*push* ke GitHub, lalu situsnya ikut ter-update.
 
 ---
 
+> **Full Disk Access sudah diberikan dan terverifikasi berfungsi pada 4 Agustus 2026.**
+> Autosync berjalan otomatis — langkah pemberian izin di bawah hanya perlu diulang
+> kalau macOS di-install ulang atau izinnya dicabut.
+
 ## Cek status sekarang
 
 Tempel perintah ini di Terminal — hasilnya langsung memberi tahu autosync sudah
